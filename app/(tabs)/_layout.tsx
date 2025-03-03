@@ -18,27 +18,32 @@ export default function TabLayout() {
                 headerShown: false,
                 tabBarButton: HapticTab,
                 tabBarBackground: TabBarBackground,
+                tabBarLabel: () => null,
                 tabBarStyle: Platform.select({
-                ios: {
-                    // Use a transparent background on iOS to show the blur effect
-                    position: 'absolute',
-                },
-                default: {},
+                    ios: {
+                        // Use a transparent background on iOS to show the blur effect
+                        position: 'absolute',
+                    },
+                    default: {},
                 }),
             }}
         >
             <Tabs.Screen
                 name="index"
                 options={{
-                    title: 'Home',
-                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />
                 }}
             />
             <Tabs.Screen
-                name="explore"
+                name="skills"
                 options={{
-                    title: 'Skills',
-                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />
+                }}
+            />
+            <Tabs.Screen
+                name="profile"
+                options={{
+                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />
                 }}
             />
         </Tabs>
